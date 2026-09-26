@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sudoku Solver</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Судоку Решатель</h1>
+        
+        <!-- Сетка Судоку -->
+        <div id="sudoku-board" class="sudoku-board">
+            <!-- Ячейки сгенерируются автоматически через JavaScript -->
+        </div>
+
+        <!-- Панель управления головоломкой -->
+        <div class="controls-panel">
+             <div class="generation-block">
+                <select id="difficulty-select" class="select-field">
+                    <option value="easy">Лёгкий</option>
+                    <option value="medium" selected>Средний</option>
+                    <option value="hard">Сложный</option>
+                </select>
+                <button id="generate-btn" class="btn primary">Новая игра</button>
+            </div>
+            
+            <!-- Переключатель режима редактирования подсказок -->
+            <div class="lock-panel">
+                <button id="toggle-lock-btn" class="btn lock-btn locked">🔒 Подсказки заблокированы</button>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="check-btn" class="btn warning">Проверить себя</button>
+                <button id="solve-btn" class="btn success">Решить по-умному</button>
+                
+                <input type="file" id="file-input" accept=".txt" style="display: none;">
+                <button id="upload-btn" class="btn info">Из файла (.txt)</button>
+                
+                <button id="clear-btn" class="btn danger">Очистить</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
